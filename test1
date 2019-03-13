@@ -1,0 +1,21 @@
+debug:
+
+R       check registers
+R AX    modify registers
+
+D ds:0
+D es:0
+D ds:100
+D 0200:5 15
+D 0200:5 L 15
+D 10 (from ds)
+D100 (from ds)
+
+e ds:3 14 15 16 (modify ds:3 ds:4 ds:5 to 14 15 16)
+e 10 (modify current ds:10)
+
+u 0 (from cs:0)
+u100 (from cs:100)
+a
+t 3
+t =0100 3
