@@ -76,13 +76,37 @@ DIV/IDIV:
     AX(16-bit)      ÷   8-bit   ->      AL(quotient)    AH(remainder)    
     DX AX(32-bit)   ÷   16-bit  ->      AX()            DX()
     EDX EAX         ÷   32-bit  ->      EAX()           EDX() 
+AND/OR/XOR/TEST/NOT:
+    
+CMP destination, source
+CMP DX, 00  compare the DX value with zero
+JE L7       if yes, then jump to label L7
+L7:
+...
 
+INC EDX
+CMP EDX, 10
+JLE LP1     if less than or equal to 10
 
+JMP
+SHL         (shift left)
+JE/JZ       jump equal or jump zero             ZF
+JNE/JNZ     jump not equal or jump not zero     ZF
+JA/JNBE     jump above or jump not below/equal  CF,ZF
+JAE/JNB
+JB/JNAE
+JBE/JNA
 
-
-
-
-
+JXCZ
+JC
+JNC
+JO
+JNO
+JP/JPE
+JNP/JPO
+JS
+JNS
+OF  ZF  DF  PF  CF  IF  AF  TF  SF
 
 
 
